@@ -23,8 +23,8 @@
       --highlight: #0b1020;
       --toggle-bg: #ffffff;
       --toggle-text: #1a1a1a;
-      --timeline: #4b2679;
-      --small-text: #444;     
+      --timeline: #4b2679;   /* dark purple */
+      --small-text: #444;     /* dark grey small text */
       --contact-icon-bg: #f3edff;
       --maxw: 880px;
     }
@@ -41,8 +41,8 @@
       --toggle-bg: #000000;
       --toggle-text: #1a1a1a;
       --timeline: #4b2679;
-      --small-text: #ddd;   /* CHANGED: light grey small text in dark mode */
-      --contact-icon-bg: #37205a; /* CHANGED: dark purple for icon backgrounds */
+      --small-text: #ddd;   /* light grey small text in dark mode */
+      --contact-icon-bg: #37205a;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
@@ -78,7 +78,7 @@
     footer{padding:40px 0;color:var(--muted);font-size:14px}
     .small{
       font-size:14px;
-      color: var(--small-text); /* CHANGED: uses variable for mode-aware color */
+      color: var(--small-text);
     }
     /* Toggle Button styles */
     #themeBtn {
@@ -154,8 +154,7 @@
       .wrap { padding: 12px; }
       h2 { font-size: 1.5em;}
     }
-
-    /* CHANGED: Contact Section Styles with Real Icons */
+    /* Contact Section Styles with Real Icons */
     .contact-list { 
       display: flex; 
       flex-wrap: wrap; 
@@ -190,8 +189,6 @@
     .contact-link:hover { color: #4b2679; }
     .contact-info { margin-top: 10px; font-size: 1.13em; color: var(--fg);}
     .contact-icon svg { width:24px; height:24px; display:block;}
-
-    /* Extra for target focus */
     .contact-link:focus .contact-icon,
     .contact-link:hover .contact-icon {
       background: #a0aec0;
@@ -262,20 +259,21 @@
       </div>
     </section>
     <!-- Timeline Experience -->
-   <section id="experience">
+    <section id="experience">
       <h2>Work Experience</h2>
-     <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-date">Jan 2023 &mdash; Dec 2024</div>
-          <b>Undergraduate Teaching Assistant, ASU</b>
-          <ul>
-            <li>Supported classes: Engineering & Digital Design</li>
-            <li>Guided student projects and learning</li>
-          </ul>
-        </div>
-      </div>
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Jan 2023 &mdash; Present</div>
+            <b>Undergraduate Teaching Assistant, ASU</b>
+            <ul>
+              <li>Supported classes: Engineering & Digital Design</li>
+              <li>Guided student projects and learning</li>
+              <li>Helped develop engaging curriculum experiences</li>
+            </ul>
+          </div>
+        </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
@@ -323,7 +321,7 @@
         <li><strong>Languages:</strong> English, A1 French [Ministry of Education, France]</li>
       </ul>
     </section>
-    
+    <!-- Fun Contact Section with SVG icons -->
     <section id="contact">
       <h2>Contact</h2>
       <ul class="contact-list">
@@ -374,7 +372,6 @@
         </li>
       </ul>
     </section>
-   
     <footer>
       <div>© <span id="y"></span> Tavishi Sharma. Built with plain HTML/CSS. <span class="small">Last updated: Sep 2025.</span></div>
     </footer>
