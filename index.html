@@ -20,7 +20,8 @@
       --chipfg: #333;
       --card: #fffbe6;
       --accent: #e5e7eb;
-      --highlight: #fff8dc;
+      --highlight: #0b1020;  /* navy for light mode */
+      --toggle: #e5e7eb;     /* toggle button grey in light mode */
       --maxw: 880px;
     }
     body {
@@ -37,7 +38,8 @@
       --chipfg: #c7d2fe;
       --card: #3a3d42;
       --accent: #22292f;
-      --highlight: #fff8dc;
+      --highlight: #fff8dc;  /* butter yellow for dark mode */
+      --toggle: #fdf6e3;     /* toggle button cream in dark mode */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
@@ -55,7 +57,7 @@
     nav a{padding:14px 6px;white-space:nowrap;color:var(--muted)}
     nav a.active, nav a:hover{color:var(--fg)}
     section{padding:32px 0}
-    section h2{font-size:22px;margin:0 0 14px;color:var(--highlight)}
+    section h2{font-size:22px;margin:0 0 14px;color:var(--highlight);}
     p{margin:0 0 14px}
     ul{margin:8px 0 0 18px}
     .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:18px}
@@ -80,13 +82,14 @@
       border:none;
       cursor:pointer;
       font-weight:500;
-      background: var(--accent);
+      background: var(--toggle);     /* uses --toggle variable */
       color: var(--fg);
       position: fixed;
       top: 16px;
       right: 16px;
       z-index: 99;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: background 0.25s, color 0.25s;
     }
     #themeBtn:focus {outline: 2px solid var(--link);}
   </style>
@@ -97,7 +100,7 @@
   <div class="wrap">
     <!-- Header -->
     <header>
-      <img src="Tavishi_Headshot.jpeg" alt="Tavishi Sharma headshot" />
+      <img src="IMG_2090 2.jpeg" alt="Tavishi Sharma headshot" />
       <div>
         <h1>Tavishi Sharma</h1>
         <div class="subtitle">BS, Computer Science @ ASU Barrett Honors · Minor in Mathematics</div>
@@ -203,7 +206,6 @@
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
       document.getElementById('themeBtn').textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
     window.onload = function() {
       const pref = localStorage.getItem('theme');
@@ -212,6 +214,11 @@
         document.getElementById('themeBtn').textContent = '☀️ Light Mode';
       }
     }
+    // Save preference on toggle
+    document.getElementById('themeBtn').addEventListener('click', function() {
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
   </script>
 </body>
 </html>
