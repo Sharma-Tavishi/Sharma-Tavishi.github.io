@@ -12,33 +12,33 @@
   <link rel="icon" href="assets/favicon.png" />
   <style>
     :root {
-  --bg: #fdf6e3; /* cream for light mode */
-  --fg: #1a1a1a;
-  --muted: #a0aec0;
-  --link: #38bdf8;
-  --chip: #f0e7db;
-  --chipfg: #333;
-  --card: #fffbe6;
-  --accent: #e5e7eb;
-  --highlight: #fff8dc;
-}
-
-body {
-  background: var(--bg);
-  color: var(--fg);
-}
-
-.dark-mode {
-  --bg: #282c34; /* grey for dark mode */
-  --fg: #e6edf3;
-  --muted: #ced4dc;
-  --link: #38bdf8;
-  --chip: #33343b;
-  --chipfg: #c7d2fe;
-  --card: #3a3d42;
-  --accent: #22292f;
-  --highlight: #fff8dc;
-}
+      --bg: #fdf6e3; /* cream for light mode */
+      --fg: #1a1a1a;
+      --muted: #a0aec0;
+      --link: #38bdf8;
+      --chip: #f0e7db;
+      --chipfg: #333;
+      --card: #fffbe6;
+      --accent: #e5e7eb;
+      --highlight: #fff8dc;
+      --maxw: 880px;
+    }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      transition: background 0.25s, color 0.25s;
+    }
+    .dark-mode {
+      --bg: #282c34; /* grey for dark mode */
+      --fg: #e6edf3;
+      --muted: #ced4dc;
+      --link: #38bdf8;
+      --chip: #33343b;
+      --chipfg: #c7d2fe;
+      --card: #3a3d42;
+      --accent: #22292f;
+      --highlight: #fff8dc;
+    }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
     a{color:var(--link);text-decoration:none}
@@ -69,17 +69,35 @@ body {
     .pub .authors{font-size:15px;margin-bottom:6px}
     .pub .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
     details{margin-top:8px}
-    code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace; font-size:13px}
+    code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:13px}
     footer{padding:40px 0;color:var(--muted);font-size:14px}
     .small{font-size:14px;color:var(--muted)}
+    /* Toggle Button styles */
+    #themeBtn {
+      margin: 0 24px 0 0;
+      padding:8px 18px;
+      border-radius:8px;
+      border:none;
+      cursor:pointer;
+      font-weight:500;
+      background: var(--accent);
+      color: var(--fg);
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 99;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    #themeBtn:focus {outline: 2px solid var(--link);}
   </style>
 </head>
 <body>
+  <!-- Toggle Button, always visible at top-right -->
+  <button onclick="toggleTheme()" aria-label="Toggle theme" id="themeBtn">🌙 Dark Mode</button>
   <div class="wrap">
     <!-- Header -->
     <header>
-      <!-- Swap to your own headshot -->
-      <img src="IMG_2090 2.jpeg" alt="Tavishi Sharma headshot" />
+      <img src="Tavishi_Headshot.jpeg" alt="Tavishi Sharma headshot" />
       <div>
         <h1>Tavishi Sharma</h1>
         <div class="subtitle">BS, Computer Science @ ASU Barrett Honors · Minor in Mathematics</div>
@@ -102,19 +120,13 @@ body {
       <a href="#contact">Contact</a>
     </div>
   </nav>
-  <div class="wrap" style="display:flex;justify-content:flex-end;">
-  <button onclick="toggleTheme()" aria-label="Toggle theme" id="themeBtn" style="margin:12px 0;padding:8px 18px;border-radius:8px;border:none;cursor:pointer;font-weight:500;">
-    🌙 Dark Mode
-  </button>
-</div>
-
   <main class="wrap">
     <!-- About -->
     <section id="about">
       <h2>About</h2>
       <p>
         BS student at Arizona State University (Barrett Honors). Computer Science major and Mathematics minor, with a passion for making technology accessible, collaborative, and impactful. 
-        Recent research at NASA JPL focuses on integrating <strong>human and robotic capabilities</strong> to enhance collaboration and resilience in space exploration[attached_file:1].
+        Recent research at NASA JPL focuses on integrating <strong>human and robotic capabilities</strong> to enhance collaboration and resilience in space exploration.
       </p>
       <p>
         Dean’s List, working toward innovative solutions in AI, robotics, and data systems.
@@ -126,19 +138,19 @@ body {
       <div class="grid">
         <div class="card">
           <strong>Capstone Project: Finite State Machine</strong>
-          <p class="small">Developed two custom finite state machine designs based on user interviews, using asynchronous set/reset flip-flops and Karnaugh maps[attached_file:1].</p>
+          <p class="small">Developed two custom finite state machine designs based on user interviews, using asynchronous set/reset flip-flops and Karnaugh maps.</p>
         </div>
         <div class="card">
           <strong>Standard Deviation Project</strong>
-          <p class="small">Built a modular C++ analytics tool to compute and analyze standard deviation for diverse datasets, emphasizing usability and real-world statistics[attached_file:1].</p>
+          <p class="small">Built a modular C++ analytics tool to compute and analyze standard deviation for diverse datasets, emphasizing usability and real-world statistics.</p>
         </div>
         <div class="card">
           <strong>Bookstore Management System</strong>
-          <p class="small">Designed and developed a database system for bookstore operations—inventory, sales, and customer management—using SQL and Python[attached_file:1].</p>
+          <p class="small">Designed and developed a database system for bookstore operations—inventory, sales, and customer management—using SQL and Python.</p>
         </div>
         <div class="card">
           <strong>Project Spyn: Autonomous Vehicle for the Disabled</strong>
-          <p class="small">Created a compact Lego EV3 robot and navigation algorithm with distance sensing and object-handling capabilities to assist users navigating spaces[attached_file:1].</p>
+          <p class="small">Created a compact Lego EV3 robot and navigation algorithm with distance sensing and object-handling capabilities to assist users navigating spaces.</p>
         </div>
       </div>
     </section>
@@ -146,10 +158,10 @@ body {
     <section id="experience">
       <h2>Experience</h2>
       <ul>
-        <li>Research Fellow (NASA JPL, 2024-25): Advanced research in AI-powered human-robot collaboration for space exploration, co-authoring peer-reviewed work[attached_file:1].</li>
-        <li>Software Engineering Intern (SelfBest, 2025): Managed workflows on productivity platforms and benchmarked competitor solutions for feature improvements[attached_file:1].</li>
-        <li>Teaching Assistant (ASU, 2023-24): Assisted courses in Engineering, Digital Design Fundamentals, and supported student success in project-based classes[attached_file:1].</li>
-        <li>Data Analytics Intern (Entero Healthcare, 2021): Organized, validated, and visualized analytics for 4500+ clients, and helped design custom Python analytics tools[attached_file:1].</li>
+        <li>Research Fellow (NASA JPL, 2024-25): Advanced research in AI-powered human-robot collaboration for space exploration, co-authoring peer-reviewed work.</li>
+        <li>Software Engineering Intern (SelfBest, 2025): Managed workflows on productivity platforms and benchmarked competitor solutions for feature improvements.</li>
+        <li>Teaching Assistant (ASU, 2023-24): Assisted courses in Engineering, Digital Design Fundamentals, and supported student success in project-based classes.</li>
+        <li>Data Analytics Intern (Entero Healthcare, 2021): Organized, validated, and visualized analytics for 4500+ clients, and helped design custom Python analytics tools.</li>
       </ul>
     </section>
     <section id="skills">
@@ -187,22 +199,19 @@ body {
     onScroll();
   </script>
   <script>
-  function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    document.getElementById('themeBtn').textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    // Optionally save preference
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }
-
-  // On load, restore preference
-  window.onload = function() {
-    const pref = localStorage.getItem('theme');
-    if (pref === 'dark') {
-      document.body.classList.add('dark-mode');
-      document.getElementById('themeBtn').textContent = '☀️ Light Mode';
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      document.getElementById('themeBtn').textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
-  }
-</script>
+    window.onload = function() {
+      const pref = localStorage.getItem('theme');
+      if (pref === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('themeBtn').textContent = '☀️ Light Mode';
+      }
+    }
+  </script>
 </body>
 </html>
