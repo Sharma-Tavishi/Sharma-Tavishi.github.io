@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Tavishi Sharma | Computer Science @ ASU</title>
-  <meta name="description" content="Tavishi Sharma — Computer Science major, ASU Barrett Honors. Projects in AI, robotics, and data systems.">
-  <meta property="og:title" content="Tavishi Sharma | AI × Robotics × Data" />
-  <meta property="og:description" content="Projects and experience at the intersection of computer science, robotics, and analytics.">
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="assets/favicon.png" />
   <style>
     :root {
       --bg: #fdf6e3;
       --fg: #1a1a1a;
       --muted: #a0aec0;
       --link: #38bdf8;
-      --chip: #d6d6d6;    /* CHANGED: much darker */
-      --chipfg: #222;     /* CHANGED: nearly black */
-      --chip-border: #888;/* CHANGED: chip border dark */
+      --chip: #d6d6d6;
+      --chipfg: #222;
+      --chip-border: #888;
       --card: #fffbe6;
       --accent: #e5e7eb;
       --highlight: #0b1020;
-      --toggle-bg: #000000;
+      --toggle-bg: #ffffff;
       --toggle-text: #1a1a1a;
-      --navline: #888; /* CHANGED: dark nav/section line */
-      --subtitle: #222; /* CHANGED: subtitle near black */
-      --tab-bg: #e5e5e5;   /* CHANGED: dark tab bg */
-      --tab-fg: #444;      /* CHANGED: dark tab text */
+      --navline: #888;
+      --subtitle: #222;
+      --tab-bg: #e5e5e5;
+      --tab-fg: #444;
       --tab-active: #0b1020;
       --maxw: 880px;
     }
@@ -41,7 +36,7 @@
       --card: #3a3d42;
       --accent: #22292f;
       --highlight: #fff8dc;
-      --toggle-bg: #ffffff;
+      --toggle-bg: #000000;
       --toggle-text: #1a1a1a;
       --navline: #bbb;
       --subtitle: #e6edf3;
@@ -49,18 +44,52 @@
       --tab-fg: #ddd;
       --tab-active: #fff8dc;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
-    header{display:flex;gap:24px;align-items:center;padding:32px 0 16px}
-    header img{width:180px;height:180px;border-radius:16px;object-fit:cover;border:2px solid #e5e7eb}
-    h1{font-size:2.4em;line-height:1.2;margin:0 0 6px;font-weight:700;}
-    .subtitle{color:var(--subtitle); font-size:1.3em;}
-    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      transition: background 0.25s, color 0.25s;
+    }
+    .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:24px;
+    }
+    header{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      padding:32px 0 16px;
+    }
+    header img{
+      width:180px;
+      height:180px;
+      border-radius:16px;
+      object-fit:cover;
+      border:2px solid #e5e7eb;
+    }
+    h1{
+      font-size:2.4em;
+      line-height:1.2;
+      margin:0 0 6px;
+      font-weight:700;
+    }
+    .subtitle{
+      color: var(--subtitle); 
+      font-size:1.3em;
+      margin-bottom:5px;
+    }
+    .small{
+      font-size:14px;
+      color:#444;
+      margin-bottom:11px;
+      margin-top:0;
+    }
     .chip{
-      display:inline-flex;align-items:center;gap:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding:8px 12px;
       border-radius:999px;
       background:var(--chip);
@@ -69,6 +98,7 @@
       border:1px solid var(--chip-border);
       box-shadow: 0 2px 6px rgba(46,46,46,0.03);
       transition: background 0.17s, color 0.15s;
+      margin:0 6px 0 0;
     }
     .chip:hover{background: #bcbcbc;}
     nav{
@@ -81,6 +111,7 @@
     section{
       padding:32px 0;
       border-bottom:1px solid var(--navline);
+      margin:0;
     }
     .tab-row{
       display:flex;
@@ -88,7 +119,9 @@
       margin:18px 0 0 0;
     }
     .tab-btn{
-      padding:8px 16px;min-width:88px;text-align:center;
+      padding:8px 16px;
+      min-width:88px;
+      text-align:center;
       border:none;
       border-radius:8px;
       background:var(--tab-bg);
@@ -97,32 +130,51 @@
       font-size:1.08em;
       cursor:pointer;
       transition:background 0.17s,color 0.17s;
-      margin-bottom:1px;
     }
     .tab-btn.active, .tab-btn:focus{
-      background: #fff; color: var(--tab-active);
+      background: #fff;
+      color: var(--tab-active);
       border:2px solid var(--tab-active);
       outline:none;
     }
     .tab-btn:hover:not(.active){background:#d4d4d4; color:#222;}
-    .small{font-size:14px;color:#444;}
-    .toggle-btn { margin:0 24px 0 0; }
+    #themeBtn{
+      margin:0 24px 0 0;
+      padding:6px 14px;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      font-weight:500;
+      background:var(--toggle-bg);
+      color:var(--toggle-text);
+      position:fixed;
+      top:16px;
+      right:16px;
+      z-index:99;
+      box-shadow:0 2px 8px rgba(0,0,0,0.04);
+      font-size:1.4em;
+      line-height:1;
+      width:48px;
+      height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    #themeBtn:focus{outline:2px solid var(--link);}
   </style>
 </head>
 <body>
-  <!-- Toggle Button -->
   <button onclick="toggleTheme()" aria-label="Toggle theme" id="themeBtn">🌙</button>
   <div class="wrap">
-    <!-- Header -->
     <header>
-      <img src="Tavishi_Headshot.jpeg" alt="Tavishi Sharma headshot" />
+      <img src="Tavishi_Headshot.jpeg" alt="Tavishi Sharma headshot">
       <div>
         <h1>Tavishi Sharma</h1>
         <div class="subtitle">
-          BS, Computer Science @ ASU Barrett Honors · Minor in Mathematics
+          BS, Computer Science @ ASU Barrett Honors &middot; Minor in Mathematics
         </div>
         <div class="small">
-          GPA: 3.88 · Graduation: May 2026 · Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025
+          GPA: 3.88 &middot; Graduation: May 2026 &middot; Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025
         </div>
         <div class="links">
           <a class="chip" href="mailto:tavishisharma0505@gmail.com" aria-label="Email">Email</a>
@@ -131,7 +183,6 @@
         </div>
       </div>
     </header>
-    <!-- Tab Row (navigation) -->
     <div class="tab-row">
       <button class="tab-btn active">About</button>
       <button class="tab-btn">Projects</button>
@@ -140,32 +191,27 @@
       <button class="tab-btn">Contact</button>
     </div>
   </div>
-  <!-- Main content goes here -->
   <main class="wrap">
-    <!-- About Section -->
     <section id="about">
       <h2>About</h2>
-      <p>BS student at Arizona State University (Barrett Honors). Computer Science major and Mathematics minor, with a passion for making technology accessible, collaborative, and impactful.
-        Recent research at NASA JPL focuses on integrating <strong>human and robotic capabilities</strong> to enhance collaboration and resilience in space exploration.
-      </p>
+      <p>BS student at Arizona State University (Barrett Honors). Computer Science major and Mathematics minor, with a passion for making technology accessible, collaborative, and impactful. Recent research at NASA JPL focuses on integrating <strong>human and robotic capabilities</strong> to enhance collaboration and resilience in space exploration.</p>
       <p>Dean’s List, working toward innovative solutions in AI, robotics, and data systems.</p>
     </section>
-    <!-- Other sections follow ... -->
   </main>
   <script>
-    document.getElementById('themeBtn').addEventListener('click', function(){
+    function toggleTheme() {
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
       document.getElementById('themeBtn').textContent = isDark ? '☀️' : '🌙';
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
+    }
     window.onload = function() {
       const pref = localStorage.getItem('theme');
-      if (pref === 'dark') {
+      if (pref == 'dark') {
         document.body.classList.add('dark-mode');
         document.getElementById('themeBtn').textContent = '☀️';
       }
-    };
+    }
   </script>
 </body>
 </html>
