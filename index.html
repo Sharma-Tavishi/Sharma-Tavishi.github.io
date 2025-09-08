@@ -21,15 +21,12 @@
       --card: #fffbe6;
       --accent: #e5e7eb;
       --highlight: #0b1020;
-      --toggle-bg: #000000;
+      --toggle-bg: #ffffff;
       --toggle-text: #1a1a1a;
       --timeline: #4b2679;
+      --small-text: #444;     
+      --contact-icon-bg: #f3edff;
       --maxw: 880px;
-    }
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      transition: background 0.25s, color 0.25s;
     }
     .dark-mode {
       --bg: #282c34;
@@ -41,9 +38,11 @@
       --card: #3a3d42;
       --accent: #22292f;
       --highlight: #fff8dc;
-      --toggle-bg: #ffffff;
+      --toggle-bg: #000000;
       --toggle-text: #1a1a1a;
       --timeline: #4b2679;
+      --small-text: #ddd;   /* CHANGED: light grey small text in dark mode */
+      --contact-icon-bg: #37205a; /* CHANGED: dark purple for icon backgrounds */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
@@ -77,8 +76,10 @@
     details{margin-top:8px}
     code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; font-size:13px}
     footer{padding:40px 0;color:var(--muted);font-size:14px}
-    /* CHANGED: .small text color - now dark grey (#444) for better readability */
-    .small{font-size:14px;color:#444;}  /* CHANGED */
+    .small{
+      font-size:14px;
+      color: var(--small-text); /* CHANGED: uses variable for mode-aware color */
+    }
     /* Toggle Button styles */
     #themeBtn {
       margin: 0 24px 0 0;
@@ -154,20 +155,20 @@
       h2 { font-size: 1.5em;}
     }
 
-    /* CHANGED: Fun Contact Section Styles */
+    /* CHANGED: Contact Section Styles with Real Icons */
     .contact-list { 
       display: flex; 
       flex-wrap: wrap; 
       align-items: center; 
-      gap: 22px; 
+      gap: 24px; 
       margin: 14px 0 0 0; 
       list-style: none; 
-      padding-left: 0; 
-    } /* CHANGED */
+      padding-left: 0;
+    }
     .contact-icon { 
       width: 38px; 
       height: 38px; 
-      background: var(--card); 
+      background: var(--contact-icon-bg);
       border-radius: 50%; 
       display: flex; 
       align-items: center; 
@@ -175,7 +176,8 @@
       font-size: 1.7em; 
       box-shadow: 0 2px 7px rgba(0,0,0,.07);
       margin-right: 9px;
-    } /* CHANGED */
+      transition: background 0.2s;
+    }
     .contact-link { 
       font-size: 1.09em; 
       color: var(--link); 
@@ -184,11 +186,16 @@
       transition: color 0.17s; 
       display: flex; 
       align-items: center;
-    } /* CHANGED */
-    .contact-link:hover { 
-      color: #4b2679; 
-    } /* CHANGED */
+    }
+    .contact-link:hover { color: #4b2679; }
     .contact-info { margin-top: 10px; font-size: 1.13em; color: var(--fg);}
+    .contact-icon svg { width:24px; height:24px; display:block;}
+
+    /* Extra for target focus */
+    .contact-link:focus .contact-icon,
+    .contact-link:hover .contact-icon {
+      background: #a0aec0;
+    }
   </style>
 </head>
 <body>
@@ -201,8 +208,7 @@
       <div>
         <h1>Tavishi Sharma</h1>
         <div class="subtitle">BS, Computer Science @ ASU Barrett Honors · Minor in Mathematics</div>
-        <div class="small">GPA: 3.88 · Graduation: May 2026</div>
-        <div class="small">Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025</div>
+        <div class="small">GPA: 3.88 · Graduation: May 2026 · Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025</div>
         <div class="links">
           <a class="chip" href="mailto:tavishisharma0505@gmail.com" aria-label="Email">Email</a>
           <a class="chip" href="https://github.com/Sharma-Tavishi" target="_blank" rel="noopener">GitHub</a>
@@ -262,12 +268,11 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-date">June 2025 &mdash; Aug 2025</div>
-            <b>Software Engineering Intern, SelfBest</b>
+             <div class="timeline-date">Jan 2023 &mdash; Dec 2024</div>
+            <b>Undergraduate Teaching Assistant, ASU</b>
             <ul>
-              <li>Managed software operations & holistic workflows</li>
-              <li>Benchmarked productivity tools for engineers</li>
-              <li>Improved platform usability features</li>
+              <li>Supported classes: Engineering & Digital Design</li>
+              <li>Guided student projects and learning</li>
             </ul>
           </div>
         </div>
@@ -280,17 +285,6 @@
               <li>Led AI/human-robot collaboration research</li>
               <li>Designed resilient space exploration systems</li>
               <li>Co-authored technical paper for publication</li>
-            </ul>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">Jan 2023 &mdash; Dec 2024</div>
-            <b>Undergraduate Teaching Assistant, ASU</b>
-            <ul>
-              <li>Supported classes: Engineering & Digital Design</li>
-              <li>Guided student projects and learning</li>
             </ul>
           </div>
         </div>
@@ -317,35 +311,58 @@
         <li><strong>Languages:</strong> English, A1 French [Ministry of Education, France]</li>
       </ul>
     </section>
-    <!-- CHANGED: Fun Contact Section -->
+    
     <section id="contact">
       <h2>Contact</h2>
       <ul class="contact-list">
         <li>
-          <a class="contact-link" href="mailto:tavishisharma0505@gmail.com">
-            <span class="contact-icon">📧</span>
-            Email Me
+          <a class="contact-link" href="mailto:tavishisharma0505@gmail.com" aria-label="Email">
+            <span class="contact-icon">
+              <!-- Gmail SVG -->
+              <svg fill="none" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2" fill="#fff"/>
+                <path d="M3 7.5L12 14.5L21 7.5" stroke="#ea4335" stroke-width="2"/>
+              </svg>
+            </span>
+            Gmail
           </a>
         </li>
         <li>
-          <a class="contact-link" href="https://github.com/Sharma-Tavishi" target="_blank" rel="noopener">
-            <span class="contact-icon">🐙</span>
+          <a class="contact-link" href="https://github.com/Sharma-Tavishi" target="_blank" rel="noopener" aria-label="GitHub">
+            <span class="contact-icon">
+              <!-- GitHub SVG -->
+              <svg viewBox="0 0 24 24" fill="#181717">
+                <path d="M12 2C6.477 2 2 6.484 2 12.013c0 4.428 2.868 8.184 6.839 9.522.5.093.682-.217.682-.482 0-.238-.009-.868-.014-1.704-2.782.605-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.463-1.11-1.463-.909-.622.069-.609.069-.609 1.003.07 1.531 1.031 1.531 1.031.893 1.531 2.341 1.09 2.91.834.091-.647.35-1.09.636-1.342-2.221-.253-4.555-1.112-4.555-4.945 0-1.092.39-1.988 1.029-2.688-.104-.256-.446-1.28.098-2.67 0 0 .842-.27 2.76 1.025A9.545 9.545 0 0112 7.845c.853.004 1.713.115 2.518.337 1.918-1.295 2.76-1.025 2.76-1.025.544 1.39.202 2.414.099 2.671.64.7 1.029 1.596 1.029 2.688 0 3.841-2.337 4.688-4.566 4.936.359.309.677.917.677 1.848 0 1.335-.012 2.415-.012 2.745 0 .267.18.578.688.48A10.016 10.016 0 0022 12.012C22 6.484 17.523 2 12 2z"/>
+              </svg>
+            </span>
             GitHub
           </a>
         </li>
         <li>
-          <a class="contact-link" href="https://www.linkedin.com/in/tavishi-sharma05/" target="_blank" rel="noopener">
-            <span class="contact-icon">💼</span>
+          <a class="contact-link" href="https://www.linkedin.com/in/tavishi-sharma05/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <span class="contact-icon">
+              <!-- LinkedIn SVG -->
+              <svg viewBox="0 0 24 24" fill="#0A66C2">
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="#fff"/>
+                <path d="M7.5 8.5v7M7.5 7.5a1 1 0 110 2 1 1 0 010-2m4 7v-3a2 2 0 014 0v3" stroke="#0A66C2" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
             LinkedIn
           </a>
         </li>
         <li>
-          <span class="contact-icon">📱</span>
+          <span class="contact-icon">
+            <!-- Phone SVG -->
+            <svg viewBox="0 0 24 24" fill="#7d4b99">
+              <rect x="4" y="4" width="16" height="16" rx="4" fill="#fff"/>
+              <path d="M8 10a6 6 0 008 8M8 10V8a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#7d4b99" stroke-width="2"/>
+            </svg>
+          </span>
           <span class="contact-info">+1-602-570-1736</span>
         </li>
       </ul>
     </section>
-    <!-- End CHANGED -->
+   
     <footer>
       <div>© <span id="y"></span> Tavishi Sharma. Built with plain HTML/CSS. <span class="small">Last updated: Sep 2025.</span></div>
     </footer>
