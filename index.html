@@ -21,8 +21,9 @@
       --card: #fffbe6;
       --accent: #e5e7eb;
       --highlight: #0b1020;
-      --toggle-bg: #000000;
+      --toggle-bg: #ffffff;
       --toggle-text: #1a1a1a;
+      --timeline: #b7aefa;
       --maxw: 880px;
     }
     body {
@@ -40,8 +41,9 @@
       --card: #3a3d42;
       --accent: #22292f;
       --highlight: #fff8dc;
-      --toggle-bg: #fdf6e3;
+      --toggle-bg: #000000;
       --toggle-text: #1a1a1a;
+      --timeline: #b7aefa;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
@@ -101,6 +103,51 @@
       justify-content: center;
     }
     #themeBtn:focus {outline: 2px solid var(--link);}
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      margin-left: 42px;
+      padding-left: 26px;
+      border-left: 3px solid var(--timeline);
+      max-width: 600px;
+    }
+    .timeline-item {
+      position: relative;
+      min-height: 64px;
+      margin-bottom: 54px;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -33px;
+      top: 2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 3px solid var(--timeline);
+      background: #fff;
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+    .timeline-content {
+      padding: 0 0 0 16px;
+    }
+    .timeline-date {
+      font-size: 1.25em;
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: var(--fg);
+      letter-spacing: -1px;
+    }
+    .timeline-desc {
+      font-size: 1.08em;
+      color: #444;
+      margin-top: 8px;
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 12px; }
+      .timeline { margin-left: 17px; padding-left: 11px; }
+      .timeline-dot { left: -18px; }
+      h2 { font-size: 1.5em;}
+    }
   </style>
 </head>
 <body>
@@ -166,15 +213,51 @@
         </div>
       </div>
     </section>
-    <!-- Experience -->
+    <!-- Timeline Experience -->
     <section id="experience">
-      <h2>Experience</h2>
-      <ul>
-        <li>Research Fellow (NASA JPL, 2024-25): Advanced research in AI-powered human-robot collaboration for space exploration, co-authoring peer-reviewed work.</li>
-        <li>Software Engineering Intern (SelfBest, 2025): Managed workflows on productivity platforms and benchmarked competitor solutions for feature improvements.</li>
-        <li>Teaching Assistant (ASU, 2023-24): Assisted courses in Engineering, Digital Design Fundamentals, and supported student success in project-based classes.</li>
-        <li>Data Analytics Intern (Entero Healthcare, 2021): Organized, validated, and visualized analytics for 4500+ clients, and helped design custom Python analytics tools.</li>
-      </ul>
+      <h2>Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">June 2025 &mdash; Aug 2025</div>
+            <div class="timeline-desc">
+              Software Engineering Intern, SelfBest<br>
+              Managed software operations and workflows. Benchmarked productivity solutions and improved platform features.
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Aug 2024 &mdash; May 2025</div>
+            <div class="timeline-desc">
+              Research Fellow, NASA JPL (ASU)<br>
+              Advanced research in AI-powered human-robot collaboration for space exploration.
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Jan 2023 &mdash; Dec 2024</div>
+            <div class="timeline-desc">
+              Undergraduate Teaching Assistant, ASU<br>
+              Assisted engineering and design courses, supporting student projects.
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">May 2021 &mdash; June 2021</div>
+            <div class="timeline-desc">
+              Data Analytics Intern, Entero Healthcare<br>
+              Organized, validated, and visualized analytics for 4500+ clients. Designed custom Python analytics tools.
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="skills">
       <h2>Skills & Certifications</h2>
