@@ -12,17 +12,17 @@
   <link rel="icon" href="assets/favicon.png" />
   <style>
     :root {
-      --bg: #fdf6e3;   /* cream for light mode */
-      --fg: #1a1a1a;   /* page text color */
+      --bg: #fdf6e3;
+      --fg: #1a1a1a;
       --muted: #a0aec0;
       --link: #38bdf8;
       --chip: #f0e7db;
       --chipfg: #333;
       --card: #fffbe6;
       --accent: #e5e7eb;
-      --highlight: #0b1020;  /* navy for light mode */
-      --toggle-bg: #e5e7eb;  /* button bg: grey in light */
-      --toggle-text: #1a1a1a; /* button text: black in light */
+      --highlight: #0b1020;
+      --toggle-bg: #e5e7eb;
+      --toggle-text: #1a1a1a;
       --maxw: 880px;
     }
     body {
@@ -31,7 +31,7 @@
       transition: background 0.25s, color 0.25s;
     }
     .dark-mode {
-      --bg: #282c34;      /* grey for dark mode */
+      --bg: #282c34;
       --fg: #e6edf3;
       --muted: #ced4dc;
       --link: #38bdf8;
@@ -39,9 +39,9 @@
       --chipfg: #c7d2fe;
       --card: #3a3d42;
       --accent: #22292f;
-      --highlight: #fff8dc;    /* butter yellow for dark */
-      --toggle-bg: #fdf6e3;    /* button bg: cream in dark */
-      --toggle-text: #1a1a1a;   /* button text: always black for max legibility */
+      --highlight: #fff8dc;
+      --toggle-bg: #fdf6e3;
+      --toggle-text: #1a1a1a;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
@@ -79,27 +79,33 @@
     /* Toggle Button styles */
     #themeBtn {
       margin: 0 24px 0 0;
-      padding:8px 18px;
-      border-radius:8px;
+      padding:6px 14px;
+      border-radius:999px;
       border:none;
       cursor:pointer;
       font-weight:500;
-      background: var(--toggle-bg);     /* uses --toggle-bg variable */
-      color: var(--toggle-text);        /* uses --toggle-text variable */
+      background: var(--toggle-bg);
+      color: var(--toggle-text);
       position: fixed;
       top: 16px;
       right: 16px;
       z-index: 99;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       transition: background 0.25s, color 0.25s;
-      font-size: 1.15em;
+      font-size: 1.4em;
+      line-height: 1;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     #themeBtn:focus {outline: 2px solid var(--link);}
   </style>
 </head>
 <body>
   <!-- Toggle Button, always visible at top-right -->
-  <button onclick="toggleTheme()" aria-label="Toggle theme" id="themeBtn">🌙 Dark Mode</button>
+  <button onclick="toggleTheme()" aria-label="Toggle theme" id="themeBtn">🌙</button>
   <div class="wrap">
     <!-- Header -->
     <header>
@@ -208,13 +214,13 @@
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
-      document.getElementById('themeBtn').textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      document.getElementById('themeBtn').textContent = isDark ? '☀️' : '🌙';
     }
     window.onload = function() {
       const pref = localStorage.getItem('theme');
       if (pref === 'dark') {
         document.body.classList.add('dark-mode');
-        document.getElementById('themeBtn').textContent = '☀️ Light Mode';
+        document.getElementById('themeBtn').textContent = '☀️';
       }
     }
     document.getElementById('themeBtn').addEventListener('click', function() {
