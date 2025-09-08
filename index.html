@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tavishi Sharma | Computer Science @ ASU</title>
+  <meta name="description" content="Tavishi Sharma — Computer Science major, ASU Barrett Honors. Projects in AI, robotics, and data systems.">
+  <meta name="keywords" content="Tavishi Sharma, Arizona State University, Computer Science, AI, robotics, NASA JPL, Data Analytics, GEM5, finite state machine, bookstore management">
+  <meta property="og:title" content="Tavishi Sharma | AI × Robotics × Data" />
+  <meta property="og:description" content="Projects and experience at the intersection of computer science, robotics, and analytics.">
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --fg:#e6edf3;
+      --muted:#a0aec0;
+      --link:#38bdf8;
+      --chip:#111827;
+      --chipfg:#c7d2fe;
+      --card:#0f172a;
+      --accent:#e5e7eb;
+      --highlight:#fff8dc;
+      --maxw: 880px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
+    header{display:flex;gap:24px;align-items:center;padding:32px 0 16px}
+    header img{width:180px;height:180px;border-radius:16px;object-fit:cover;border:2px solid #e5e7eb}
+    h1{font-size:32px;line-height:1.2;margin:0 0 6px}
+    .subtitle{color:var(--muted);font-size:18px}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--chip);color:var(--chipfg);font-size:15px;border:1px solid rgba(0,0,0,0.05)}
+    nav{position:sticky;top:0;background:var(--bg);border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;z-index:50}
+    nav .wrap{display:flex;gap:16px;overflow:auto}
+    nav a{padding:14px 6px;white-space:nowrap;color:var(--muted)}
+    nav a.active, nav a:hover{color:var(--fg)}
+    section{padding:32px 0}
+    section h2{font-size:22px;margin:0 0 14px;color:var(--highlight)}
+    p{margin:0 0 14px}
+    ul{margin:8px 0 0 18px}
+    .card{background:var(--card);border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:18px}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:720px){ .grid{grid-template-columns:1fr 1fr}}
+    .pub{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:var(--card)}
+    .pub img{width:80px;height:auto;border-radius:4px;flex-shrink:0}
+    .pub-content{flex:1}
+    .pub h3{margin:0 0 8px;font-size:20px}
+    .pub .meta{color:var(--muted);font-size:14px;margin-bottom:6px}
+    .pub .authors{font-size:15px;margin-bottom:6px}
+    .pub .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    details{margin-top:8px}
+    code{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace; font-size:13px}
+    footer{padding:40px 0;color:var(--muted);font-size:14px}
+    .small{font-size:14px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header>
+      <!-- Swap to your own headshot -->
+      <img src="assets/headshot.jpeg" alt="Tavishi Sharma headshot" />
+      <div>
+        <h1>Tavishi Sharma</h1>
+        <div class="subtitle">BS, Computer Science @ ASU Barrett Honors · Minor in Mathematics</div>
+        <div class="small">GPA: 3.88 · Graduation: May 2026 · Dean's List: Fall 2022, Spring 2023, Fall 2023, Spring 2024, Fall 2024, Spring 2025</div>
+        <div class="links">
+          <a class="chip" href="mailto:tavishisharma0505@gmail.com" aria-label="Email">Email</a>
+          <a class="chip" href="https://github.com/Sharma-Tavishi" target="_blank" rel="noopener">GitHub</a>
+          <a class="chip" href="https://www.linkedin.com/in/tavishi-sharma05/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- Top Nav -->
+  <nav>
+    <div class="wrap">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  <main class="wrap">
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        BS student at Arizona State University (Barrett Honors). Computer Science major and Mathematics minor, with a passion for making technology accessible, collaborative, and impactful. 
+        Recent research at NASA JPL focuses on integrating <strong>human and robotic capabilities</strong> to enhance collaboration and resilience in space exploration[attached_file:1].
+      </p>
+      <p>
+        Dean’s List, working toward innovative solutions in AI, robotics, and data systems.
+      </p>
+    </section>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Capstone Project: Finite State Machine</strong>
+          <p class="small">Developed two custom finite state machine designs based on user interviews, using asynchronous set/reset flip-flops and Karnaugh maps[attached_file:1].</p>
+        </div>
+        <div class="card">
+          <strong>Standard Deviation Project</strong>
+          <p class="small">Built a modular C++ analytics tool to compute and analyze standard deviation for diverse datasets, emphasizing usability and real-world statistics[attached_file:1].</p>
+        </div>
+        <div class="card">
+          <strong>Bookstore Management System</strong>
+          <p class="small">Designed and developed a database system for bookstore operations—inventory, sales, and customer management—using SQL and Python[attached_file:1].</p>
+        </div>
+        <div class="card">
+          <strong>Project Spyn: Autonomous Vehicle for the Disabled</strong>
+          <p class="small">Created a compact Lego EV3 robot and navigation algorithm with distance sensing and object-handling capabilities to assist users navigating spaces[attached_file:1].</p>
+        </div>
+      </div>
+    </section>
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li>Research Fellow (NASA JPL, 2024-25): Advanced research in AI-powered human-robot collaboration for space exploration, co-authoring peer-reviewed work[attached_file:1].</li>
+        <li>Software Engineering Intern (SelfBest, 2025): Managed workflows on productivity platforms and benchmarked competitor solutions for feature improvements[attached_file:1].</li>
+        <li>Teaching Assistant (ASU, 2023-24): Assisted courses in Engineering, Digital Design Fundamentals, and supported student success in project-based classes[attached_file:1].</li>
+        <li>Data Analytics Intern (Entero Healthcare, 2021): Organized, validated, and visualized analytics for 4500+ clients, and helped design custom Python analytics tools[attached_file:1].</li>
+      </ul>
+    </section>
+    <section id="skills">
+      <h2>Skills & Certifications</h2>
+      <ul>
+        <li><strong>Programming:</strong> Python, Java, MySQL, C, C++, Prolog, Scheme</li>
+        <li><strong>Software:</strong> MATLAB, GitHub, Microsoft Office, GEM5, PostgreSQL</li>
+        <li><strong>Certifications:</strong> Coursera (Programming Fundamentals, Crafting Quality Code, Innovation through Design, Intro to Generative AI, Machine Learning for All)</li>
+        <li><strong>Languages:</strong> English, A1 French [Ministry of Education, France]</li>
+      </ul>
+    </section>
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:tavishisharma0505@gmail.com">tavishisharma0505@gmail.com</a><br>
+         GitHub: <a href="https://github.com/Sharma-Tavishi" target="_blank" rel="noopener">@Sharma-Tavishi</a><br>
+         LinkedIn: <a href="https://www.linkedin.com/in/tavishi-sharma05/" target="_blank" rel="noopener">Tavishi Sharma</a><br>
+         Phone: +1-602-570-1736</p>
+    </section>
+    <footer>
+      <div>© <span id="y"></span> Tavishi Sharma. Built with plain HTML/CSS. <span class="small">Last updated: Sep 2025.</span></div>
+    </footer>
+  </main>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const links = Array.from(document.querySelectorAll('nav a'));
+    const ids = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const onScroll = () => {
+      const y = window.scrollY + 100;
+      let activeIndex = 0;
+      ids.forEach((sec, i) => { if (sec.offsetTop <= y) activeIndex = i; });
+      links.forEach((a, i) => a.classList.toggle('active', i === activeIndex));
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>
