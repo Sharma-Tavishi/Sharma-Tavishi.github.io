@@ -12,8 +12,8 @@
   <link rel="icon" href="assets/favicon.png" />
   <style>
     :root {
-      --bg: #fdf6e3; /* cream for light mode */
-      --fg: #1a1a1a;
+      --bg: #fdf6e3;   /* cream for light mode */
+      --fg: #1a1a1a;   /* page text color */
       --muted: #a0aec0;
       --link: #38bdf8;
       --chip: #f0e7db;
@@ -21,7 +21,8 @@
       --card: #fffbe6;
       --accent: #e5e7eb;
       --highlight: #0b1020;  /* navy for light mode */
-      --toggle: #e5e7eb;     /* toggle button grey in light mode */
+      --toggle-bg: #e5e7eb;  /* button bg: grey in light */
+      --toggle-text: #1a1a1a; /* button text: black in light */
       --maxw: 880px;
     }
     body {
@@ -30,7 +31,7 @@
       transition: background 0.25s, color 0.25s;
     }
     .dark-mode {
-      --bg: #282c34; /* grey for dark mode */
+      --bg: #282c34;      /* grey for dark mode */
       --fg: #e6edf3;
       --muted: #ced4dc;
       --link: #38bdf8;
@@ -38,8 +39,9 @@
       --chipfg: #c7d2fe;
       --card: #3a3d42;
       --accent: #22292f;
-      --highlight: #fff8dc;  /* butter yellow for dark mode */
-      --toggle: #fdf6e3;     /* toggle button cream in dark mode */
+      --highlight: #fff8dc;    /* butter yellow for dark */
+      --toggle-bg: #fdf6e3;    /* button bg: cream in dark */
+      --toggle-text: #1a1a1a;   /* button text: always black for max legibility */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
@@ -82,14 +84,15 @@
       border:none;
       cursor:pointer;
       font-weight:500;
-      background: var(--toggle);     /* uses --toggle variable */
-      color: var(--fg);
+      background: var(--toggle-bg);     /* uses --toggle-bg variable */
+      color: var(--toggle-text);        /* uses --toggle-text variable */
       position: fixed;
       top: 16px;
       right: 16px;
       z-index: 99;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       transition: background 0.25s, color 0.25s;
+      font-size: 1.15em;
     }
     #themeBtn:focus {outline: 2px solid var(--link);}
   </style>
@@ -100,7 +103,7 @@
   <div class="wrap">
     <!-- Header -->
     <header>
-      <img src="IMG_2090 2.jpeg" alt="Tavishi Sharma headshot" />
+      <img src="Tavishi_Headshot.jpeg" alt="Tavishi Sharma headshot" />
       <div>
         <h1>Tavishi Sharma</h1>
         <div class="subtitle">BS, Computer Science @ ASU Barrett Honors · Minor in Mathematics</div>
@@ -214,7 +217,6 @@
         document.getElementById('themeBtn').textContent = '☀️ Light Mode';
       }
     }
-    // Save preference on toggle
     document.getElementById('themeBtn').addEventListener('click', function() {
       const isDark = document.body.classList.contains('dark-mode');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
