@@ -53,11 +53,11 @@
     header img{width:180px;height:180px;border-radius:16px;object-fit:cover;border:2px solid #e5e7eb}
     h1{font-size:32px;line-height:1.2;margin:0 0 6px}
     .subtitle{
-      color:#222;           /* changed: almost black in light mode */
+      color:#222;           
       font-size:18px;
     }
     .dark-mode .subtitle{
-      color: #e6edf3;       /* keep default for dark mode */
+      color: #e6edf3;       
     }
     .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
     .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--chip);color:var(--chipfg);font-size:15px;border:1px solid rgba(0,0,0,0.05)}
@@ -110,6 +110,55 @@
       justify-content: center;
     }
     #themeBtn:focus {outline: 2px solid var(--link);}
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      margin-left: 42px;
+      padding-left: 26px;
+      border-left: 4px solid var(--timeline);
+      max-width: 650px;
+    }
+    .timeline-item {
+      position: relative;
+      min-height: 64px;
+      margin-bottom: 54px;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -33px;
+      top: 2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 3px solid var(--timeline);
+      background: #fff;
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+    .timeline-content {
+      padding: 0 0 0 16px;
+    }
+    .timeline-date {
+      font-size: 1.15em;
+      font-weight: bold;
+      margin-bottom: 2px;
+      color: var(--fg);
+    }
+    .timeline-content ul {
+      padding-left: 20px;
+      margin: 8px 0 0 0;
+    }
+    .timeline-content ul li {
+      font-size: 1.08em;
+      line-height: 1.6;
+      margin-bottom: 2px;
+      list-style: disc inside;
+    }
+    @media (max-width: 640px) {
+      .timeline { margin-left: 17px; padding-left: 11px; }
+      .timeline-dot { left: -18px; }
+      .wrap { padding: 12px; }
+      h2 { font-size: 1.5em;}
+    }
     /* Contact Section: vertical layout */
     .contact-list {
       display: flex;
@@ -152,8 +201,10 @@
   </style>
 </head>
 <body>
+  <!-- Toggle Button, always visible at top-right -->
   <button onclick="toggleTheme()" aria-label="Toggle theme" id="themeBtn">🌙</button>
   <div class="wrap">
+    <!-- Header -->
     <header>
       <img src="Tavishi_Headshot.jpeg" alt="Tavishi Sharma headshot" />
       <div>
@@ -168,6 +219,7 @@
       </div>
     </header>
   </div>
+  <!-- Top Nav -->
   <nav>
     <div class="wrap">
       <a href="#about">About</a>
@@ -178,24 +230,101 @@
     </div>
   </nav>
   <main class="wrap">
+    <!-- About -->
     <section id="about">
       <h2>About</h2>
-      <p>BS student at Arizona State University (Barrett Honors). Computer Science major and Mathematics minor, with a passion for making technology accessible, collaborative, and impactful. 
+      <p>
+        BS student at Arizona State University (Barrett Honors). Computer Science major and Mathematics minor, with a passion for making technology accessible, collaborative, and impactful. 
         Recent research at NASA JPL focuses on integrating <strong>human and robotic capabilities</strong> to enhance collaboration and resilience in space exploration.
       </p>
-      <p>Dean’s List, working toward innovative solutions in AI, robotics, and data systems.</p>
+      <p>
+        Dean’s List, working toward innovative solutions in AI, robotics, and data systems.
+      </p>
     </section>
+    <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
-      <!-- your content -->
+      <div class="grid">
+        <div class="card">
+          <strong>Capstone Project: Finite State Machine</strong>
+          <p class="small">Developed two custom finite state machine designs based on user interviews, using asynchronous set/reset flip-flops and Karnaugh maps.</p>
+        </div>
+        <div class="card">
+          <strong>Standard Deviation Project</strong>
+          <p class="small">Built a modular C++ analytics tool to compute and analyze standard deviation for diverse datasets, emphasizing usability and real-world statistics.</p>
+        </div>
+        <div class="card">
+          <strong>Bookstore Management System</strong>
+          <p class="small">Designed and developed a database system for bookstore operations—inventory, sales, and customer management—using SQL and Python.</p>
+        </div>
+        <div class="card">
+          <strong>Project Spyn: Autonomous Vehicle for the Disabled</strong>
+          <p class="small">Created a compact Lego EV3 robot and navigation algorithm with distance sensing and object-handling capabilities to assist users navigating spaces.</p>
+        </div>
+      </div>
     </section>
+    <!-- Timeline Experience -->
     <section id="experience">
       <h2>Work Experience</h2>
-      <!-- your content -->
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Jan 2023 &mdash; Present</div>
+            <b>Undergraduate Teaching Assistant, ASU</b>
+            <ul>
+              <li>Supported classes: Engineering & Digital Design</li>
+              <li>Guided student projects and learning</li>
+              <li>Helped develop engaging curriculum experiences</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">June 2025 &mdash; Aug 2025</div>
+            <b>Software Engineering Intern, SelfBest</b>
+            <ul>
+              <li>Managed software operations & holistic workflows</li>
+              <li>Benchmarked productivity tools for engineers</li>
+              <li>Improved platform usability features</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Aug 2024 &mdash; May 2025</div>
+            <b>Research Fellow, NASA JPL (ASU)</b>
+            <ul>
+              <li>Led AI/human-robot collaboration research</li>
+              <li>Designed resilient space exploration systems</li>
+              <li>Co-authored technical paper for publication</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">May 2021 &mdash; June 2021</div>
+            <b>Data Analytics Intern, Entero Healthcare</b>
+            <ul>
+              <li>Created reports for 4500+ clients</li>
+              <li>Validated and organized analytics data</li>
+              <li>Built custom Python analytics tools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="skills">
       <h2>Skills & Certifications</h2>
-      <!-- your content -->
+      <ul>
+        <li><strong>Programming:</strong> Python, Java, MySQL, C, C++, Prolog, Scheme</li>
+        <li><strong>Software:</strong> MATLAB, GitHub, Microsoft Office, GEM5, PostgreSQL</li>
+        <li><strong>Certifications:</strong> Coursera (Programming Fundamentals, Crafting Quality Code, Innovation through Design, Intro to Generative AI, Machine Learning for All)</li>
+        <li><strong>Languages:</strong> English, A1 French [Ministry of Education, France]</li>
+      </ul>
     </section>
     <!-- UPDATED Contact Section: now vertical -->
     <section id="contact">
@@ -204,11 +333,7 @@
         <li>
           <a class="contact-link" href="mailto:tavishisharma0505@gmail.com" aria-label="Email">
             <span class="contact-icon">
-              <!-- Gmail SVG -->
-              <svg fill="none" viewBox="0 0 24 24">
-                <rect x="3" y="5" width="18" height="14" rx="2" fill="#fff"/>
-                <path d="M3 7.5L12 14.5L21 7.5" stroke="#ea4335" stroke-width="2"/>
-              </svg>
+              <svg fill="none" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="#fff"/><path d="M3 7.5L12 14.5L21 7.5" stroke="#ea4335" stroke-width="2"/></svg>
             </span>
             Gmail
           </a>
@@ -216,10 +341,7 @@
         <li>
           <a class="contact-link" href="https://github.com/Sharma-Tavishi" target="_blank" rel="noopener" aria-label="GitHub">
             <span class="contact-icon">
-              <!-- GitHub SVG -->
-              <svg viewBox="0 0 24 24" fill="#181717">
-                <path d="M12 2C6.477 2 2 6.484 2 12.013c0 4.428 2.868 8.184 6.839 9.522.5.093.682-.217.682-.482 0-.238-.009-.868-.014-1.704-2.782.605-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.463-1.11-1.463-.909-.622.069-.609.069-.609 1.003.07 1.531 1.031 1.531 1.031.893 1.531 2.341 1.09 2.91.834.091-.647.35-1.09.636-1.342-2.221-.253-4.555-1.112-4.555-4.945 0-1.092.39-1.988 1.029-2.688-.104-.256-.446-1.28.098-2.67 0 0 .842-.27 2.76 1.025A9.545 9.545 0 0112 7.845c.853.004 1.713.115 2.518.337 1.918-1.295 2.76-1.025 2.76-1.025.544 1.39.202 2.414.099 2.671.64.7 1.029 1.596 1.029 2.688 0 3.841-2.337 4.688-4.566 4.936.359.309.677.917.677 1.848 0 1.335-.012 2.415-.012 2.745 0 .267.18.578.688.48A10.016 10.016 0 0022 12.012C22 6.484 17.523 2 12 2z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="#181717"><path d="M12 2C6.477 2 2 6.484 2 12.013c0 4.428 2.868 8.184 6.839 9.522.5.093.682-.217.682-.482 0-.238-.009-.868-.014-1.704-2.782.605-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.463-1.11-1.463-.909-.622.069-.609.069-.609 1.003.07 1.531 1.031 1.531 1.031.893 1.531 2.341 1.09 2.91.834.091-.647.35-1.09.636-1.342-2.221-.253-4.555-1.112-4.555-4.945 0-1.092.39-1.988 1.029-2.688-.104-.256-.446-1.28.098-2.67 0 0 .842-.27 2.76 1.025A9.545 9.545 0 0112 7.845c.853.004 1.713.115 2.518.337 1.918-1.295 2.76-1.025 2.76-1.025.544 1.39.202 2.414.099 2.671.64.7 1.029 1.596 1.029 2.688 0 3.841-2.337 4.688-4.566 4.936.359.309.677.917.677 1.848 0 1.335-.012 2.415-.012 2.745 0 .267.18.578.688.48A10.016 10.016 0 0022 12.012C22 6.484 17.523 2 12 2z"/></svg>
             </span>
             GitHub
           </a>
@@ -227,22 +349,14 @@
         <li>
           <a class="contact-link" href="https://www.linkedin.com/in/tavishi-sharma05/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <span class="contact-icon">
-              <!-- LinkedIn SVG -->
-              <svg viewBox="0 0 24 24" fill="#0A66C2">
-                <rect x="2" y="2" width="20" height="20" rx="4" fill="#fff"/>
-                <path d="M7.5 8.5v7M7.5 7.5a1 1 0 110 2 1 1 0 010-2m4 7v-3a2 2 0 014 0v3" stroke="#0A66C2" stroke-width="2" stroke-linecap="round"/>
-              </svg>
+              <svg viewBox="0 0 24 24" fill="#0A66C2"><rect x="2" y="2" width="20" height="20" rx="4" fill="#fff"/><path d="M7.5 8.5v7M7.5 7.5a1 1 0 110 2 1 1 0 010-2m4 7v-3a2 2 0 014 0v3" stroke="#0A66C2" stroke-width="2" stroke-linecap="round"/></svg>
             </span>
             LinkedIn
           </a>
         </li>
         <li>
           <span class="contact-icon">
-            <!-- Phone SVG -->
-            <svg viewBox="0 0 24 24" fill="#7d4b99">
-              <rect x="4" y="4" width="16" height="16" rx="4" fill="#fff"/>
-              <path d="M8 10a6 6 0 008 8M8 10V8a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#7d4b99" stroke-width="2"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="#7d4b99"><rect x="4" y="4" width="16" height="16" rx="4" fill="#fff"/><path d="M8 10a6 6 0 008 8M8 10V8a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#7d4b99" stroke-width="2"/></svg>
           </span>
           <span class="contact-info">+1-602-570-1736</span>
         </li>
