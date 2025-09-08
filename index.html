@@ -23,7 +23,7 @@
       --highlight: #0b1020;
       --toggle-bg: #ffffff;
       --toggle-text: #1a1a1a;
-      --timeline: #b7aefa;
+      --timeline: #4b2679;   
       --maxw: 880px;
     }
     body {
@@ -43,7 +43,7 @@
       --highlight: #fff8dc;
       --toggle-bg: #000000;
       --toggle-text: #1a1a1a;
-      --timeline: #b7aefa;
+      --timeline: #4b2679;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
@@ -108,8 +108,8 @@
       position: relative;
       margin-left: 42px;
       padding-left: 26px;
-      border-left: 3px solid var(--timeline);
-      max-width: 600px;
+      border-left: 4px solid var(--timeline);
+      max-width: 650px;
     }
     .timeline-item {
       position: relative;
@@ -131,21 +131,25 @@
       padding: 0 0 0 16px;
     }
     .timeline-date {
-      font-size: 1.25em;
-      font-weight: 700;
+      font-size: 1.15em;
+      font-weight: bold;
       margin-bottom: 2px;
       color: var(--fg);
-      letter-spacing: -1px;
     }
-    .timeline-desc {
+    .timeline-content ul {
+      padding-left: 20px;
+      margin: 8px 0 0 0;
+    }
+    .timeline-content ul li {
       font-size: 1.08em;
-      color: #444;
-      margin-top: 8px;
+      line-height: 1.6;
+      margin-bottom: 2px;
+      list-style: disc inside;
     }
     @media (max-width: 640px) {
-      .wrap { padding: 12px; }
       .timeline { margin-left: 17px; padding-left: 11px; }
       .timeline-dot { left: -18px; }
+      .wrap { padding: 12px; }
       h2 { font-size: 1.5em;}
     }
   </style>
@@ -221,40 +225,47 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-date">June 2025 &mdash; Aug 2025</div>
-            <div class="timeline-desc">
-              Software Engineering Intern, SelfBest<br>
-              Managed software operations and workflows. Benchmarked productivity solutions and improved platform features.
-            </div>
+            <b>Software Engineering Intern, SelfBest</b>
+            <ul>
+              <li>Managed software operations & holistic workflows</li>
+              <li>Benchmarked productivity tools for engineers</li>
+              <li>Improved platform usability features</li>
+            </ul>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-date">Aug 2024 &mdash; May 2025</div>
-            <div class="timeline-desc">
-              Research Fellow, NASA JPL (ASU)<br>
-              Advanced research in AI-powered human-robot collaboration for space exploration.
-            </div>
+            <b>Research Fellow, NASA JPL (ASU)</b>
+            <ul>
+              <li>Led AI/human-robot collaboration research</li>
+              <li>Designed resilient space exploration systems</li>
+              <li>Co-authored technical paper for publication</li>
+            </ul>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-date">Jan 2023 &mdash; Dec 2024</div>
-            <div class="timeline-desc">
-              Undergraduate Teaching Assistant, ASU<br>
-              Assisted engineering and design courses, supporting student projects.
-            </div>
+            <b>Undergraduate Teaching Assistant, ASU</b>
+            <ul>
+              <li>Supported classes: Engineering & Digital Design</li>
+              <li>Guided student projects and learning</li>
+            </ul>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-date">May 2021 &mdash; June 2021</div>
-            <div class="timeline-desc">
-              Data Analytics Intern, Entero Healthcare<br>
-              Organized, validated, and visualized analytics for 4500+ clients. Designed custom Python analytics tools.
-            </div>
+            <b>Data Analytics Intern, Entero Healthcare</b>
+            <ul>
+              <li>Created reports for 4500+ clients</li>
+              <li>Validated and organized analytics data</li>
+              <li>Built custom Python analytics tools</li>
+            </ul>
           </div>
         </div>
       </div>
